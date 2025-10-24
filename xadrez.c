@@ -30,10 +30,17 @@ do{
 }while(rainha < 8);
 printf("A rainha moveu-se para esquerda\n");
 
+printf("\n\n");
 
+//movendo Cavalo
 
-
-
+for (i = 0; i < baixo; i++) {
+        printf("Baixo\n");
+    }
+    while (j < esquerda) {
+        printf("Esquerda\n");
+        j++;
+    }
 
 
 return 0;
