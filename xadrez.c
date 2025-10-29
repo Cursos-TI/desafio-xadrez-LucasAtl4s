@@ -1,46 +1,80 @@
 #include <stdio.h>
-#include <stdlib.h>
+
+void Torre(int torre){
+if(torre > 0 && torre <= 5){
+        printf("Linha reta\n");
+       Torre(torre - 1);
+    }
+}
+
+void Bispo(int bispo){
+
+    if(bispo > 0 && bispo <= 5){
+        printf("Diagonal\n");
+        Bispo(bispo - 1);
+    }
+}
+
+void Rainha(int rainha){
+
+    if(rainha > 0 && rainha <=8){
+        printf("A Frente\n");
+        Rainha(rainha - 1);
+    }else if(rainha=8){printf("Se moveu para esquerda\n");}
+}
+
+
+void Cavalo(int cavalo) {
+    for (int i = 1; i <= cavalo; i++) {
+        for (int j = 1; j <= 2; j++) {
+            if (j == 1) {
+                printf("Cima\n"); // Primeira parte do "L": duas casas para cima
+            } else {
+                printf("Cima\n");
+            }
+        }
+        printf("Direita\n"); // Segunda parte do "L": uma casa para a direita
+    }
+}
+
 int main(){
 
-int torre;
-int bispo = 0;
-int rainha = 0;
+
+int movimento;
+
+printf("Escolha uma peça para jogar:\n");
+    printf("1.TORRE\n");
+    printf("2.BISPO\n");
+    printf("3.RAINHA\n");
+    printf("4.CAVALO\n");
+    scanf("%d", &movimento);
 
 
-// Movendo a torre
-for(torre = 0; torre < 5; torre++){
 
-    printf("A torre se moveu para Direita\n");
-}
 
-printf("\n");
+    switch (movimento)
+    {
+    case 1: 
+        Torre(5);
+        break;
+    
 
-//Movendo o bispo
+        case 2:
+      Bispo(5);
+        break;
 
-while(bispo < 5){
-    printf("Bispo moveu para cima e à direita \n"); 
-    bispo++;
-}
-printf("\n");
-//Movendo a rainha
+        case 3:
+      Rainha(8);
+        break;
 
-do{
-   printf("A rainha andou uma casa para cima\n");
-   rainha++;
-}while(rainha < 8);
-printf("A rainha moveu-se para esquerda\n");
-
-printf("\n\n");
-
-//movendo Cavalo
-
-for (i = 0; i < baixo; i++) {
-        printf("Baixo\n");
+        case 4:
+        Cavalo(1);
+        break;
     }
-    while (j < esquerda) {
-        printf("Esquerda\n");
-        j++;
-    }
+
+
+
+
 
 
 return 0;
